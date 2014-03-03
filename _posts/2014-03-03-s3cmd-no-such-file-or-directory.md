@@ -9,10 +9,8 @@ tags:
   - gpg
 ---
 
-{% excerpt %}
 If you've ever used [s3cmd](http://s3tools.org/s3cmd) and are using encryption support,
 then you might run into this problem when uploading a file to s3:
-{% endexcerpt %}
 
     !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
         An unexpected error has occurred.
