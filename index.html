@@ -1,0 +1,34 @@
+---
+layout: base
+id: "home"
+title: 'The homepage of Rob Bernabé'
+---
+{% assign postlimit = 25 %}
+
+<section class="heading">
+    <div class="container">
+        <p class="bannerbar">
+            Hi, I'm Rob. I'm a 32 year old software and platform engineer
+            living in NYC, where I work for the financial services startup <a href="http://www.payperks.com/">PayPerks</a>.
+            I love solving interesting problems and building useful things.
+        </p>
+        <p class="bannerbar">
+        I &nbsp;<i class="fa-header fa fa-heart"></i>&nbsp; <a href="http://en.wikipedia.org/wiki/DevOps">devops</a> and the &nbsp;<a href="http://en.wikipedia.org/wiki/Cloud_computing"><i class="fa-header fa fa-cloud"></i></a>&nbsp;.
+        </p>
+    </div>
+</section>
+
+<section class="regular" id="postlisting">
+    <div class="container">
+    {% for post in site.posts limit:postlimit %}
+        <section id="{{ post.id }}" class="post">
+            <time datetime="{{ post.date | date: "%Y-%m-%d" }}">{{ post.date | date: "%B %e, %Y" }}</time>
+            <a href="{{ site.url }}{{ post.url }}"><h2>{{ post.title }}</h2></a>
+            {% if post.excerpt %}
+                {{ post.excerpt | markdownify }}
+            {% endif %}
+            <a href="{{ site.url }}{{ post.url }}" class="readfullpost">Read the full post</a>
+        </section>
+    {% endfor %}
+    </div>
+</section>

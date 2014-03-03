@@ -1,0 +1,30 @@
+safe:        false
+port:        4000
+baseurl:     /
+url:         
+author:      Rob Bernabé
+description: "I do (web)development and devops at TravelBird, believe in open source and frequently defend online freedom. Additionally, I also devour books, generally spend too much time playing videogames and occasionally dabble with Thai or other Asian foods."
+
+exclude:
+    - Gemfile
+    - Gemfile.lock
+    - config.rb
+    - Rakefile
+
+#source:      .
+destination: ./_site
+plugins:     ./_plugins
+
+future:      true
+lsi:         false
+pygments:    true
+markdown:    maruku
+permalink:   /posts/:year/:month/:day/:title/
+
+maruku:
+  use_tex:    false
+  use_divs:   false
+
+excerpt_separator: ""
+tag_page_layout: tag_page
+tag_page_dir: tag

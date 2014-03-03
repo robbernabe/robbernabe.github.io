@@ -1,0 +1,21 @@
+---
+layout: default
+id: "posts"
+title: 'All posts'
+description: Articles by Rob Bernabé
+---
+
+<section class="regular" id="postlisting">
+	<div class="container">
+	{% for post in site.posts limit:postlimit %}
+		<section id="{{ post.id }}" class="post">
+			<time datetime="{{ post.date | date: "%Y-%m-%d" }}">{{ post.date | date: "%B %e, %Y" }}</time>
+			<a href="{{ site.url }}{{ post.url }}"><h2>{{ post.title }}</h2></a>
+			{% if post.excerpt %}
+				{{ post.excerpt | markdownify }}
+			{% endif %}
+			<a href="{{ site.url }}{{ post.url }}" class="readfullpost">Read the full post</a>
+		</section>
+	{% endfor %}
+	</div>
+</section>

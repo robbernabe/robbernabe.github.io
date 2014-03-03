@@ -1,0 +1,14 @@
+{% if page.socialmedia and page.socialmedia != empty %}
+<p id="social-media-links">
+<em>
+	Comments purposefully not available on this blog. Discuss this post on
+	{% capture networks %}
+	{% for link in page.socialmedia %}
+	{% if forloop.length == 1 %}{% elsif forloop.last %} or{% else %},{% endif %} <a href="{{ link[1] }}">{{ link[0] }}</a>
+	{% endfor %}
+	{% endcapture %}
+	{{ networks|remove_first:', ' }}
+	instead.
+</em>
+</p>
+{% endif %}

@@ -1,0 +1,22 @@
+---
+layout: base
+title: Tag page
+---
+
+<section class="heading">
+	<div class="container" id="postlisting">
+		<h1>Articles tagged "{{ page.tag }}"</h1>
+		{% for post in site.posts %}{% for tag in post.tags %}{% if tag == page.tag %}
+			<section id="{{ post.id }}" class="post">
+				<time datetime="{{ post.date | date: "%Y-%m-%d" }}">{{ post.date | date: "%B %e, %Y" }}</time>
+				<a href="{{ site.url }}{{ post.url }}"><h2>{{ post.title }}</h2></a>
+				{% if post.excerpt %}
+					{{ post.excerpt | markdownify }}
+				{% endif %}
+				<a href="{{ site.url }}{{ post.url }}" class="readfullpost">Read the full post</a>
+			</section>
+		{% endif %}{% endfor %}{% endfor %}
+
+		<p><a href="{{ site.url }}/tags/" class="viewalltags">View all tags</a></p>
+	</div>
+</section>
