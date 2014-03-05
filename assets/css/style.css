@@ -1180,10 +1180,17 @@
             background-size: 100%;
         }
 
+        .heading .container
+        {
+            margin-top: 40px;
+            margin-left: 25px;
+            width: 1200px;
+        }
+
         p.bannerbar
         {
             color: white;
-            width: 38%;
+            width: 33%;
             line-height: initial;
             font-size: 13pt;
             margin: -42 0;
