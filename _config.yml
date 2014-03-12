@@ -3,7 +3,7 @@ port:        4000
 baseurl:     /
 url:         
 author:      Rob Bernabé
-description: "I do (web)development and devops at TravelBird, believe in open source and frequently defend online freedom. Additionally, I also devour books, generally spend too much time playing videogames and occasionally dabble with Thai or other Asian foods."
+description: "Hi, I'm Rob. I'm a 32 year old software and platform engineer living in NYC, where I work for the financial services startup PayPerks. I love solving interesting problems and building useful things."
 
 exclude:
     - Gemfile
@@ -18,7 +18,7 @@ plugins:     ./_plugins
 future:      true
 lsi:         false
 pygments:    true
-markdown:    maruku
+markdown:    kramdown
 permalink:   /posts/:year/:month/:day/:title/
 
 maruku:

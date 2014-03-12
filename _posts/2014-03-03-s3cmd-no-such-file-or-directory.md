@@ -3,15 +3,17 @@ layout: post
 title: "s3cmd: No such file or directory"
 date: 2014-03-03T16:37:58-05:00
 updated: 2014-03-03T16:37:58-05:00
+comments: true
 tags:
   - debug logs
   - s3cmd
   - gpg
 ---
 
-If you've ever used [s3cmd](http://s3tools.org/s3cmd) and are using encryption support,
+If you've ever used [s3cmd](http://s3tools.org/s3cmd) and are using encryption support,  
 then you might run into this problem when uploading a file to s3:
 
+    {% highlight python %}
     !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
         An unexpected error has occurred.
       Please report the following lines to:
@@ -42,16 +44,18 @@ then you might run into this problem when uploading a file to s3:
         An unexpected error has occurred.
         Please report the above lines to:
        s3tools-bugs@lists.sourceforge.net
-    !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+    !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!{% endhighlight %}
 
 The problem was that s3cmd was looking for gpg in the wrong location:
 
+    {% highlight bash %}
     rbernabe ~ $ grep gpg .s3cfg
-    gpg_command = /usr/bin/gpg
+    gpg_command = /usr/bin/gpg{% endhighlight %}
 
 On my local Mac the gpg binary was in /usr/local/bin:
 
+    {% highlight bash %}
     rbernabe ~ $ which gpg
-    /usr/local/bin/gpg
+    /usr/local/bin/gpg{% endhighlight %}
 
 Updating the line `gpg_command` in the .s3cfg file accordingly fixed the error.
