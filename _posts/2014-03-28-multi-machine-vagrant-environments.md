@@ -66,4 +66,4 @@ end
 
 {% endhighlight %}
 
-The real magic happens here because of Vagrant's tight integration with various provisioners. In this case, I'm able to utliize the same puppet manifests that I'm using in production to provision this local environment. The result: a copy of this particular piece of infrastructure on my local machine. I <i class="fa-header fa fa-heart"></i> Vagrant :)
+The real magic happens here because of Vagrant's tight integration with various provisioners. With a simple "vagrant up", I can start the process of creating the instances and let the provisioner take over to configure them. In this case, I'm able to utliize the same puppet manifests that I'm using in production to provision this local environment. The result: a copy of this particular piece of infrastructure on my local machine. I <i class="fa-header fa fa-heart"></i> Vagrant :)
