@@ -3,6 +3,7 @@ layout: post
 title: "Multi-machine Vagrant Environments"
 date: 2014-03-28T16:32:05-04:00
 updated: 2014-03-28T16:32:05-04:00
+comments: True
 tags:
   - vagrant
 ---
