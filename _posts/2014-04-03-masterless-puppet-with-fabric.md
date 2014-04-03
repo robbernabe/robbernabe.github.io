@@ -11,7 +11,7 @@ tags:
 ---
 
 Sometimes you have a small environment and don't require a Puppetmaster.  In cases like these,
-I like using Fabric to complement my workflow. Here's a nice example of such a workflow:
+I like using Fabric to complement my workflow. Here's a nice example of such a workflow. This fabfile.py sits in a repository containing my puppet manifests:
 
 <script src="https://gist.github.com/robbernabe/9956109.js"></script>
 
@@ -31,3 +31,11 @@ Fabric will obey your ~/.ssh/config as long as you specify:
 env.use_ssh_config = True{% endhighlight %}
 
 However, in order to get the rsync_project task to work properly, you'll need to set the proper "ssh_opts".
+
+Now whenever you want to apply your manifests, you can simply run:
+
+    {% highlight python %}
+    fab app sync
+    fab app apply
+    {% endhighlight %}
+
